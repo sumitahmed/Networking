@@ -1,6 +1,5 @@
 import netpack as npk
 
-
 data = '100100'
 key = '1101'
 error_flag=False
