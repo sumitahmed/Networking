@@ -1,8 +1,6 @@
-
 import time
 import selective_repeat_udp_module as udp
 import netpack as npk
-
 
 # Parameters:
 m=3
@@ -13,7 +11,6 @@ S=SF
 frame_timeout_val=5
 print('Window size is considered as : {}'.format(N))
 
-
 # Data:
 data_string='RCCIIT ECE@SMN'
 data=[val for val in data_string]
@@ -22,8 +19,6 @@ data=[val for val in data_string]
 # timer & ack_frame:
 timer=[]
 ack_frame=[]
-
-
 
 # ========================================================
 # New frame Tx method:
@@ -54,7 +49,6 @@ def retx_frame(i,server_socket, addr):
     timer[i]=time.time()
     print('[Re-Tx] frame : {}'.format(i))
     
-
 # ========================================================
 # Main section:
 # ========================================================
@@ -117,7 +111,6 @@ if __name__=='__main__':
         finally:
             pass
                                     
-
         # ----------------------------------
         # Look at timer:
         T=time.time()
