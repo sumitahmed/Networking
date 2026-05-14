@@ -1,9 +1,7 @@
-
 import random
 import time
 import selective_repeat_udp_module as udp
 import netpack as npk
-
 
 # Parameters:
 m=3
@@ -15,8 +13,6 @@ print('Window size is considered as : {}'.format(N))
 # Data:
 data=[]
 buffer=[0 for i in range(N)]
-
-
 
 # ========================================================
 # Generate rando flag: 0-Normal, 1-Frame lost, 2-ACK lost
@@ -30,7 +26,6 @@ def generateFlag():
     else:
         return 2
 
-
 # ========================================================
 # Wait random time : Multiple of 100 ms 
 # min 0 sec & max 1 sec
@@ -39,7 +34,6 @@ def wait():
     cnt=random.randint(0,10)
     for _ in range(cnt):
         time.sleep(0.1)
-
 
 # ========================================================
 # Send ACK:
@@ -50,8 +44,6 @@ def send_ack(i, client_socket, ADDR):
     npk.send_data_to_udp_server(client_socket, msg, ADDR)
     print('SENT : {}'.format(msg))  
     
-
-
 # ========================================================
 # Send nACK:
 # ========================================================
@@ -60,7 +52,6 @@ def send_nack(i,client_socket, ADDR):
     msg='NACK-'+str(i)
     npk.send_data_to_udp_server(client_socket, msg, ADDR)
     print('SENT : {}'.format(msg))  
-
 
 # ========================================================
 # Store received msg to data list:
@@ -84,7 +75,6 @@ def storedata(value,i, client_socket, ADDR): # this is called only when valid fr
     
     print('[=] Received buffer : {}'.format(data))
 
-
 # ========================================================
 # Printing received data:
 # ========================================================
@@ -96,9 +86,6 @@ def print_data():
         data_string+=i
     return data_string
 
-
-
-
 # ========================================================
 # Main section:
 # ========================================================
@@ -108,7 +95,6 @@ if __name__=='__main__':
     client, ADDR = udp.client_method()
     time.sleep(5)
     
-
     while True:
 
         # -------------------------
