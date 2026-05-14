@@ -1,4 +1,3 @@
-
 '''
 [This module used to setup UDP Server & Client sockets]
 -------------------------------------------------------
@@ -6,8 +5,6 @@ Methods:
 [1] server_method()
 [2] client_method()
 '''
-
-
 import netpack as npk
 
 # Global Parameters:
